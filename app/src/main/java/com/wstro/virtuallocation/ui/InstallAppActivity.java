@@ -215,8 +215,6 @@ public class InstallAppActivity extends BaseAppToolbarActivity implements Instal
         intent.putExtra("data",new ArrayList<>(list));
         setResult(RESULT_OK,intent);
         finish();
-        //RxBus.getDefault().post(new InstallAppEvent(list));
-
     }
 
 

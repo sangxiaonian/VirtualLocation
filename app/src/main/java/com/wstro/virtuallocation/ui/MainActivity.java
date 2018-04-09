@@ -119,20 +119,6 @@ public class MainActivity extends BaseAppToolbarActivity implements MainView{
 
         initAdapter();
 
-        /*rxInstallApp = RxBus.getDefault().toObservable(InstallAppEvent.class)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<InstallAppEvent>() {
-                    @Override
-                    public void call(InstallAppEvent event) {
-                        List<AppInfo> list = event.getList();
-                        if(CommonUtils.isEmptyArray(list))
-                            return;
-
-                        showProgressDialog("安装应用中...");
-                        installList = list;
-                        presenter.installAppList(installList);
-                    }
-                });*/
 
     }
 
@@ -189,21 +175,7 @@ public class MainActivity extends BaseAppToolbarActivity implements MainView{
             rxInstallApp.unsubscribe();*/
     }
 
-   /* public AppInfo getInstallAppInfo(String packageName){
-        if(CommonUtils.isEmptyArray(installList)){
-            return null;
-        }
 
-        for (int i = 0; i < installList.size(); i++) {
-            String name = installList.get(i).getPackageName();
-            if (name.equals(packageName)) {
-                return installList.get(i);
-            }
-        }
-
-        return null;
-    }
-*/
 
     @Override
     public void onInstallSuccess(List<AppInfo> infoList) {

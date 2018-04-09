@@ -4,7 +4,7 @@ apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    buildToolsVersion '26.0.0'
     defaultConfig {
         applicationId "com.wstro.virtuallocation"
         minSdkVersion 14
@@ -23,12 +23,30 @@ android {
         }
     }
 
+
+    signingConfigs {
+        release {
+            storeFile file('../sagnxiaonian.jks')
+            storePassword 'sangxiaonian1.0'
+            keyAlias '桑小年'
+            keyPassword 'sangxiaonian1.0'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            signingConfig signingConfigs.release
         }
     }
+
+
+
 
     sourceSets {
         main{
@@ -73,8 +91,6 @@ dependencies {
     compile 'com.github.zcweng:switch-button:0.0.3@aar'
     compile files('libs/baidumapapi_search_v4_3_1.jar')
     compile files('libs/BaiduLBS_Android.jar')
-
     compile 'com.belerweb:pinyin4j:2.5.0'
     compile 'com.oushangfeng:PinnedSectionItemDecoration:1.2.4'
-
 }
