@@ -47,6 +47,7 @@ public class AppDetailPresenter extends BaseActPresenter<AppDetailView> {
                         return new RealData(cellInfoList,wifiInfoList);
                     }
                 })
+
                 .map(new Func1<RealData, RealData>() {
                     @Override
                     public RealData call(RealData data) {
@@ -76,6 +77,7 @@ public class AppDetailPresenter extends BaseActPresenter<AppDetailView> {
 
                         VirtualLocationManager.get().setLocation(Constants.appUserId,
                                 packageName,transferLocation(locInfo));
+
                         SPUtils.put(baseActivity,packageName,locInfo.getAddrStr());
 
                         return data;

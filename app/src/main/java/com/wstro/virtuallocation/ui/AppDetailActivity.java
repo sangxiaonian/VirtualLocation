@@ -132,7 +132,6 @@ public class AppDetailActivity extends BaseAppToolbarActivity implements AppDeta
             @Override
             public void onCheckedChanged(SwitchButton view, boolean isChecked) {
                 int mode = isChecked ? VirtualLocationManager.MODE_USE_SELF : VirtualLocationManager.MODE_CLOSE;
-
                 VirtualLocationManager.get().setMode(0, appInfo.getPackageName(), mode);
             }
         });

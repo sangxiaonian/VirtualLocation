@@ -73,6 +73,7 @@ public class VApplication extends Application{
                 virtualCore.addVisibleOutsidePackage("com.whatsapp");
                 virtualCore.addVisibleOutsidePackage("com.tencent.mm");
                 virtualCore.addVisibleOutsidePackage("com.immomo.momo");
+                virtualCore.addVisibleOutsidePackage("sang.com.minitoolsimple");
             }
         });
     }
